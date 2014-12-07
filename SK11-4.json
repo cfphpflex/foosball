@@ -1,0 +1,56 @@
+{
+    "colModel": [
+        {
+            "name": "ID",
+            "index": "ID",
+            "width": 60,
+            "align": "left",
+            "jsonmap": "cells.0.value"
+        },
+        {
+            "name": "FirstName",
+            "index": "FirstName",
+            "width": 140,
+            "align": "left",
+            "jsonmap": "cells.1.value"
+        },
+        {
+            "name": "LastName",
+            "index": "LastName",
+            "width": 160,
+            "align": "left",
+            "jsonmap": "cells.2.value"
+        }
+    ],
+    "colNames": [
+        "ID",
+        "First Name",
+        "Last Name"
+    ],
+    "mypage": {
+        "outerwrapper": {
+            "page":"1",
+            "total":"1",
+            "records":"1",
+            "innerwrapper": {
+                "rows":[
+                    {
+                        "id":"1",
+                        "cells":
+                        [               
+                            {
+                                "value":"12345"                     
+                            },
+                            {
+                                "value":"David"
+                            },
+                            {                           
+                                "value":"Smith"                     
+                            }                                                                                       
+                        ]       
+                    }
+                ]
+            }
+        }
+    }
+}

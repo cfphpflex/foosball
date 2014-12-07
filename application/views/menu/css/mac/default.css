@@ -1,0 +1,158 @@
+<style type="text/css">	<!--
+	/*	mac version
+
+	*/
+	.body, p, div, td, table {
+		font-size : 11pt;
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-weight : normal;
+		font-style : normal;
+		color: 333333;
+		text-indent : 0px;
+	}
+	A  {text-decoration : none;
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		color: c0c0c0;	}
+	A:hover{
+		text-decoration: underline;
+		color: #ff0000;
+	}
+
+	.Footer {
+		color: c0c0c0;
+		font-size : 11pt;
+		font-weight : normal;
+		line-height : 16 px;
+		letter-spacing : 0px;
+	}
+
+	.Header  {
+		font-size : 11pt;
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		color: 669999;
+		background-color : FFFFFF;
+		}
+
+	.Menu  {
+		font-size : 10pt;
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-weight : normal;
+		color: 669999;}
+
+	.lightlink { color: f0f0dd;	 }
+
+	h1  {
+		font-size : 16pt;
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-weight : bold;
+		line-height: 20px;
+	}
+	h2  {
+		font-size : 13pt;
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-weight : bold;
+		line-height: 20px;
+	}
+	h3  {
+		font-size : 12pt;
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-weight : bold;
+	}
+
+	h4  {
+		font-size : 12pt;
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-weight : bold;
+	}
+
+
+	.mini  {
+		font-size : 10px;
+		font-family : sans-serif;
+		font-weight : normal;
+		font-style : normal;
+		line-height : 16px;
+		text-indent : 0px;
+	}
+
+	.ultramini  {
+		font-size : 1 px;
+		line-height : 1 px;
+	}
+	.big  {
+		font-size : 11pt;
+		font-family : sans-serif;
+		font-style : normal;
+		line-height : 17px;
+		text-indent : 0px;
+	}
+
+	.tableborder  {
+		border-style : ridge;
+		border-width : 3;
+	}
+	/* ------------------------------------------------------
+	dcp specific stylesheets */
+
+
+	DIV.HeadlineFull  {
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-size : 14pt;
+		color : 5A5A5A;
+		font-weight : bold;
+	}
+	/* 
+		ensure the color for headings match.. 
+		(check headline color 003399)
+		*/
+
+	h1,h2,b,strong {
+		color : 5A5A5A;
+	}
+	h3,h4 {color: 5A5A5A;
+		font-size: 12pt;}
+
+	.HeadlineTeaser {
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-size : 11pt;
+		color : 5A5A5A;
+		font-weight : bold;
+	}
+
+	DIV.TeaserTeaser  {
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-size : 11pt;
+		color:333333
+	}
+
+	DIV.TeaserSource  {
+		font-family : arial, verdana, sans-serif, geneva, helvetica, MS Sans serif;
+		font-size : xx-small;
+		text-decoration: none;
+		color : 808080;
+	}
+	DIV.BodyFull  {
+		font-family :  arial, helvetica, verdana, sans-serif, geneva, MS Sans serif;
+		font-size : 11pt;
+	}
+
+
+	DIV.LinkTeaser  {
+		font-family : Arial, Helvetica, Tahoma, Sans-serif;
+		font-style : normal;
+		text-decoration: none;
+		font-size : 11pt;
+
+	}
+
+	DIV.LinkFull  {
+		font-family : Arial, Helvetica, Tahoma, Sans-serif;
+		font-size : 11pt;
+	}
+
+	.clsForm { cursor:hand; font-family: verdana, tahoma, arial; font-size: 11px; }
+	.BoldText {
+		color : 333333;
+		font-weight : bold;}
+	-->
+</style>

@@ -1,0 +1,58 @@
+
+<style type="text/css">  <!--
+  /* CoolMenus 4 - default styles - do not edit */
+  .clCMEvent{position:absolute; width:99%; height:99%; clip:rect(0,100%,100%,0); left:0; top:0; visibility:visible}
+  .clCMAbs{position:absolute; visibility:hidden; left:0; top:0}
+  /* CoolMenus 4 - default styles - end */
+
+  /*Style for the background-bar*/
+  .clBar{position:absolute; width:10; height:10; background-color:#0351a9; layer-background-color:#0351a9; visibility:hidden}
+
+  /*Styles for level 0*/
+  .clLevel0,.clLevel0over{
+  	position:absolute;
+  	padding:2px;
+  	font-family:tahoma,arial,helvetica;
+  	font-size:10px;
+  	font-weight:bold;
+  	/*border: 1px solid black;*/
+  }
+  .clLevel0{background-color:#0351a9; layer-background-color:#0351a9; color:white;}
+  .clLevel0over{background-color:#1640da; layer-background-color:#1640da; color:Yellow; cursor:pointer; cursor:hand; }
+  .clLevel0border{position:absolute; visibility:visible; background-color:#c0c0c0; layer-background-color:#1640da}
+
+  /*Styles for level 1*/
+  .clLevel1, .clLevel1over {position:absolute; padding:2px; font-family:tahoma, arial,helvetica; font-size:12px; font-weight:bold;}
+  .clLevel1{background-color:#FFFFFF; layer-background-color:#FFFFFF; color:#666666;}
+  .clLevel1over{background-color:#EFEFEF; layer-background-color:#EFEFEF; color:#000000; cursor:pointer; cursor:hand; }
+  .clLevel1border{position:absolute; z-index:500; visibility:hidden; background-color:#999999; layer-background-color:#999999}
+
+  /*Styles for level 2*/
+  .clLevel2, .clLevel2over{position:absolute; padding:2px; font-family:tahoma,arial,helvetica; font-size:12px; font-weight:bold}
+  .clLevel2{background-color:#FFFFFF; layer-background-color:#FFFFFF; color:#999999;}
+  .clLevel2over{background-color:#EFEFEF; layer-background-color:#EFEFEF; color:666666; cursor:pointer; cursor:hand; }
+  .clLevel2border{position:absolute; visibility:hidden; background-color:#999999; layer-background-color:#999999}
+
+
+.contentBorderOuter {
+		padding: 0px;
+		/* background: transparent; */
+      	border-top: 1px solid #DDD;
+      	border-right: 1px solid #424242;
+      	border-bottom: 1px solid #424242;
+	  	border-left: 1px solid #848284;
+		background-color: #FFF;  
+		/* width:100%;*/
+	}
+
+.contentBorderInner {
+		padding: 0px;
+		/* background: transparent; */
+      	border-top:  1px solid #848284;
+		border-right: 1px solid #848284;
+      	border-bottom: 1px solid #848284;
+	  	border-left: 1px solid #DDD;
+		/* width:100%;*/
+	}	
+  -->
+</style>

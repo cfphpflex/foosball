@@ -1,0 +1,75 @@
+
+<?php
+echo $_SERVER['DOCUMENT_ROOT'];
+print_r($_SERVER);	
+echo $APPLICATION_PATH;
+
+
+?>
+
+
+
+//connect to server 
+ssh -i atlassian_rsa.key ubuntu@hrportal.hortonworks.com
+
+ssh  ubuntu@hrportal.hortonworks.com:
+
+//add  this to hosts
+
+scp ~/.ssh/atlassian_rsa.pub  ubuntu@hrportal.hortonworks.com:
+
+
+ssh-keygen -f ~/.ssh/atlassian_rsa.key -p
+
+
+
+mysql -h localhost -u root -p mypass hrportal
+
+
+//apache config
+cd /etc/apache2
+ ls -al
+
+// COPY FILES from remote to loca and local to remote 
+
+scp ubuntu@hortonworks.com:/var/www/hrportal/Model/NewHire.php    /home/
+
+
+ 
+ 
+// edit httaccess
+
+cd /etc/apache2/sites-available
+nano default
+
+//EDIT file 
+nano apache2.conf
+ 
+// ubunto webroot
+/var/www/hrportal
+
+//login to mysql
+mysql -u root -p $4@2@m!HW 
+
+
+//
+\g show databases
+\g use hrportal;
+
+// use table
+use hrportal
+
+
+//sql get table
+\g select * from new_hires where id > 300
+\g select * from hrpotal.accounts
+
+ 
+| Tables_in_hrportal |
++--------------------+
+| accounts           |
+| jira               |
+| location           |
+| new_hires 
+
+

@@ -1,0 +1,209 @@
+
+<style type="text/css">			<!--
+			body,p,table,td,div  {
+				font-size : 11.5px;
+				font-family : arial, sans-serif,geneva, helvetica,  MS Sans serif;
+				font-weight : normal;
+				font-style : normal;
+				text-indent : 0px;
+			}
+			h1 {
+				font-size: 13px;
+				color : 666666;}
+			h2  {
+				
+				font-size : 12px;
+				font-family : sans-serif;
+				font-weight : 600;
+				color : 666666;
+			}
+
+			h3,h4  {
+				font-size : 11px;
+				font-family : sans-serif;
+				font-weight : 900;
+				color : 666666;
+			}
+
+			A  {text-decoration : none;
+				color: 003399;	}
+			A:hover{
+				text-decoration: underline;
+				color: #339900;
+			}
+			.LeftNav { 
+				color: white;
+				font-weight : bold;
+			}
+
+			.Menu  {
+				font-size : 8pt;
+				font-family : Arial, Verdana, Times New Roman;
+				font-weight : normal;
+				color:003399;}
+			
+			.topnav,a.topnav{
+				font-size:x-small;
+				line-height:17px;
+				font-family: arial,Geneva,Helvetica,sans-serif;
+				font-weight:normal,bold;
+				text-decoration : none;
+				color:FFFFFF;
+			}
+				
+			/* Form classes*/
+			.forminput
+			{	position: relative; left: 15px; font-size: 8pt; border: 1px solid Gray;}
+
+			.forminputfixed
+			{
+				position: absolute;
+				left: 150px;
+				font-size: 8pt;
+				border: 1px solid Gray;
+			}
+	
+			/* ///////////////////////////////// */
+			.header {
+				border: 1px solid grey;
+				border-color : 000000;
+				padding: 1px;
+				background : c0c0c0;
+				color: ffffff;
+
+			}
+	/*		.Header  {
+				font-size : 9pt;
+				font-family : Arial, Verdana, Times New Roman;
+				font-weight : bold;
+				color: #ffffff;
+				background-color : #c0c0c0;}*/
+			
+			/* GUI stylesheets*/
+			.border {
+				border: 1px solid grey;
+				border-color : 000000;
+				padding: 5px;
+
+			}
+			.bordernopad
+			{	border: 1px solid grey; 
+				border-color : 000000;
+				background:FFFFFF; 
+				font-size: 8pt;
+			}
+
+			.pad {	
+					padding: 7px;
+					font-size:10pt;}
+			.leftmargin
+				{	margin-left:25px;
+					font-size:8pt;}	
+			.dataentry
+				{	
+				border: 1px solid #c0c0c0;
+				background:#FFFFFF; 
+				font-size: 8pt;				
+				/*margin-left:15px;*/
+				padding:5px;
+				}
+														
+			.norecords{color:ff0000;}
+			.heading
+			{
+				
+				background: #527ca6;
+				width: 100%;
+				color: white;
+				padding: 3px;
+				font-size: 9pt;
+				font-weight : bold;
+				/*text-indent : 5px;*/
+			}
+			.headingBig
+			{
+				background: #627C9B;
+				width: 100%;
+				color:ffffff;
+				padding: 3px;
+				font-size: 10pt;
+				font-weight : bold;
+				text-indent : 5px;
+			}
+			.headingDark
+			{
+				background: #7d0000;
+				width: 100%;
+				color:ffffff;
+				padding: 2px;
+				font-size: 9pt;
+				font-weight : bold;
+				text-indent : 5px;
+			}
+			.RptHeading{
+				background: #c0c0c0;
+				color:ffffff;
+				padding: 2px;
+				font-size: 10pt;
+				font-weight : bold;			
+			}			
+			.highlightedrow
+			{
+				background: #EFEFEF;
+				width: 100%;
+				color: 666666;
+				padding: 1px;
+				font-size: 9pt;
+
+			}
+			.submitbar
+			{	background: eeefdd; 
+				width: 100%;
+				color:FFFFFF;
+				padding: 1px; 
+				align: right;
+			}
+			.ListItemA {
+			color: #003399;
+			font-weight : bold;
+			font-size: 11.5px;
+			}
+			.ListItemB {
+			color: #999999;
+			font-weight : bold;
+			font-size: 11.5px;
+			}	
+			
+			.forminput
+			{	position: relative; left: 15px; font-size: 8pt; border: 1px solid Gray;}
+		
+			.InputElem
+			{
+				font-family: Arial,Geneva,Helvetica,sans-serif;
+				font-size: 9pt;
+				border: 1px groove Gray;
+			}
+			.SelectElem
+			{
+				font-family: Arial,Geneva,Helvetica,sans-serif;
+				font-size: 8pt;
+				border: 1px groove Gray;
+			}
+			.formsubmit
+			{
+				font-family : Arial,Geneva,Helvetica,sans-serif;
+				font-size: 9pt;
+				border: 1px outset Gray;
+				background : buttonface;
+				cursor: hand;
+				color: windowtext;
+				padding: 2px;
+			}			
+			.formsubmit:hover
+			{
+				text-decoration : none;
+				background : d6d3bd;
+				color:6a6938;
+			}									
+			-->
+</style>			

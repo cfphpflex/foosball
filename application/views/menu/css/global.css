@@ -1,0 +1,351 @@
+<style type="text/css">		<!--
+		body {
+			font-family: arial,verdana,helvetica;
+			font-size: 11px;
+		}
+		td,p,div {
+			font-family: arial,verdana,helvetica;
+			font-size: 11px;
+			color: 000;
+		}
+
+		h1 {font-size: 16px;}
+		h2  {
+			font-size : 14px;
+			font-weight : 900;
+		}
+
+		h3,h4  {
+			font-size : 12px;
+			font-weight : #900;
+			color : black;
+		}
+
+		a {
+			font-family: arial,verdana,helvetica;
+			font-size: 12px;
+			color: #25496A;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			font-family: arial,Geneva,Helvetica,sans-serif;
+			color: #f00;
+			text-decoration: underline;
+		}
+		
+		a.footer {
+			font-family: arial,verdana,helvetica;
+			font-size: 11px;
+			color: 252525;
+			text-decoration: none;
+		}
+		a.footer:hover {
+			font-family: arial,verdana,helvetica;
+			font-size: 11px;
+			color: 7C1007;
+			text-decoration: underline;}
+		.MenuGray {color: 808080;}
+		.Menu {	color: FFFFFF;
+			height:20px;}
+		.Menu:hover {	color: FF0000;}
+		.topnav,a.topnav{
+			font-size:x-small;
+			line-height:17px;
+			font-family: arial,Geneva,Helvetica,sans-serif;
+			font-weight:normal,bold;
+			text-decoration : none;
+			color:FFFFFF;
+		}
+
+		.ClassHeader
+		{ 	font-size: 13pt;
+			color: efefef;
+			font-weight : bold;
+			font-style: normal;}
+
+		/* GUI styles*/
+		.Header
+		{
+			border-top:1px solid #EEE;
+			border-right:1px solid #424242;
+			border-bottom:1px solid #424242;
+			border-left:1px solid #EEE;
+			font-Family: Arial,Verdana,Sans-serif; 
+			font-size:14px; 
+			font-weight:bold; 
+			color:#FFF; 
+			background:#839585; 
+			padding:3px; 
+			text-align: center; 
+			width: 100%;
+		}
+		
+		.Heading {
+			font-size: 12px;
+			font-Family: Verdana, Arial, Helvetica, sans-serif;
+			font-Weight: bold;
+			color: #EFE8DE;
+			background-color: #25496A;
+			text-align : left;
+			padding : 2px 0 2px 5px;
+		}
+		
+		.Heading_sub
+		{
+			font-Family: Arial,Verdana,Sans-serif; 
+			font-size:12px; 
+			font-weight:bold; 
+			color:#EFE8DE; 
+			background:#25496A; 
+			padding:3px; 
+			text-align: center; 
+			width: 100%;
+		}
+		
+		
+		
+		.SectionHeading
+		{
+			background: #c0c0c0;
+			color: #ffffff;
+			padding: 3px;
+			font-size: 8pt;
+			font-weight : bold;
+			border: 1px solid #666666;
+			margin : 2px 0 2px 0;
+		}
+		.headingBig
+		{
+			background: #c0c0c0;
+			width: 100%;
+			color: #ffffff;
+			padding: 2px;
+			font-size: 8pt;
+			font-weight : bold;
+			text-indent : 5px;
+		}
+		.headingDark
+		{
+			background: #808080;
+			width: 100%;
+			color:ffffff;
+			padding: 2px;
+			font-size: 9pt;
+			font-weight : bold;
+			text-indent : 5px;
+		}
+		.borderpad
+		{	border: 1px solid grey;
+			border-color : 000000;
+			background:FFFFFF;
+			font-size: 8pt;
+			z-index: 1;
+			padding: 25px;}
+	
+		.bordernopad
+		{	border: 1px solid grey;
+			border-color : 000000;
+			background:FFFFFF;
+			font-size: 8pt;
+			z-index: 1;}
+
+		.OrderHeading
+		{
+			border: 1px solid grey;
+			border-color : #000000;
+			background:#FFFFFF;
+			font-size: 8pt;
+			padding: 2px;
+			margin : 2px 0 2px 0;
+		}
+		.OrderDetails {
+			font-size: 8pt;
+			border-bottom:.5pt solid windowtext;
+		}
+		.RowA
+		{background:#FFFFFF;
+			font-family : Arial , arial , verdana,  sans-serif;
+			font-size: 10pt;}
+		.RowB
+		{background:#EFEFEF;
+			font-family : Arial , arial , verdana,  sans-serif;
+			font-size: 8pt;}
+		.RecapBody
+		{
+			background:#FFFFFF;
+		}
+		.ReportWrap
+		{
+			width: 650px;
+			border: 1px solid #000000;
+			padding: 10px;
+			margin: 0px;
+			background: #ffffff;
+		}
+
+		/* ///////////////////////////////////////// */
+
+		.TopTitle {
+			font-size: 11pt;
+			font-weight : bold;
+			color: white;
+		}
+		.Thumbnail
+		{	border: 1px solid grey;
+			border-color : 000000;
+			background:FFFFFF;
+			font-size: 8pt;
+			z-index: 1;
+			padding: 5px;
+		}
+		
+		.forminput,input,textarea
+		{	font-size: 8pt; border: 1px solid #999999;}
+		
+		.InputElem
+		{
+			font-family: Arial,Geneva,Helvetica,sans-serif;
+			font-size: 9pt;
+			border: 1px groove Gray;
+		}
+		.SelectElem,select
+		{
+			font-size: 8pt; border: 1px solid Gray;
+			font-family: Arial,Geneva,Helvetica,sans-serif;
+		}
+		
+		.formsubmit
+		{
+			font-Family: verdana; 
+			FONT-WEIGHT: bold; 
+			FONT-SIZE: 11px; 
+			COLOR: #000000; 
+			BACKGROUND-COLOR: #ffe599; 
+			padding: 1px;	
+			BORDER: #999999 1px solid; 
+		}
+			.formsubmit:hover
+		{
+			text-decoration : none;
+			background : d6d3bd;
+			color:6a6938;
+		}
+		.SearchInstructions{
+			color: #999999;
+		}
+		.checkbox{
+			border: none;
+		}
+		
+			
+		.errorText {
+			font-family: arial,verdana,helvetica;
+			FONT-SIZE: 11px; 
+			color: Red;
+			font-weight: bold;	
+			BACKGROUND-COLOR: FFFFCE;
+			padding: 10px;
+			border: 1px #858789 solid;
+			text-align : left;
+		}
+	
+		.alert {
+			FONT-SIZE: 11px;
+			color : #305A82;
+			font-weight : bold;
+			BACKGROUND-COLOR: FFFFCE;
+			padding: 10px;
+			border: 1px #858789 solid;
+			width : 100%;
+			text-align : left;
+		}	
+		.alert1 {
+			FONT-SIZE: 11px;
+			color : #305A82;
+			font-weight : bold;
+			BACKGROUND-COLOR: FFFFCE;
+			padding: 10px;
+			border: 1px #858789 solid;
+			width : 98%;
+			text-align : left;
+		}	
+		
+		.smallerText{
+			font-size: 8pt;
+		}
+		
+		.smallestText{
+			font-size: 6pt;
+		}
+		
+		.headerFormField
+			{ font-size: 11px; height: 18px; border: 1px solid #999;}
+		
+		.titleFormField { 
+			font-size: 8pt;
+			font-weight : bold;
+			text-align: right;
+			}
+			
+		.titleFormField_dual_list { 
+			font-size: 8pt;
+			font-weight : bold;
+			text-align: center;
+			}	
+		.headerRadioButton
+			{ font-size: 11px; border: none;}
+		
+		.btn {
+			font-Family: verdana; 
+			FONT-WEIGHT: bold; 
+			FONT-SIZE: 11px; 
+			COLOR: #000000; 
+			BACKGROUND-COLOR: #ffe599; 
+			padding: 0px;	
+			BORDER: #999 1px solid; 
+		}
+
+		.btn_dual_list {
+			font-Family: verdana; 
+			FONT-WEIGHT: normal; 
+			FONT-SIZE: 11px; 
+			COLOR: #000000; 
+			BACKGROUND-COLOR: #ffe599; 
+			padding: 0px;	
+			BORDER: #999 1px solid; 
+			width: 75px;
+		}
+		
+		.labelCenter2 {
+			font-size: 11px;
+			font-Family: verdana, Arial, Helvetica, sans-serif;
+			font-Weight: bold;
+			color: #000;
+			text-align : center;
+			padding : 3px;
+			background-color: #B0BFD2;
+			border-bottom: 1px solid #999;
+			border-left: 1px solid #FFF;
+			border-right: 1px solid #999;
+			border-top: 1px solid #FFF;
+			height: 1em;
+			margin: -1px 0 -1px 0;
+			padding: 3px 6px 3px 6px;
+			text-decoration: none;
+			white-space: normal;
+		}
+		div.breakHere {
+			page-break-before: always;
+		}	
+		.printPageWrap
+		{
+			width: 650px; 
+			padding: 10px; 
+			margin: 0px; 
+			background: ffffff;
+			height: 680px;
+		}
+		/*	input, select {font-family: Arial,verdana, sans-serif;}	*/
+		-->
+</style>		
