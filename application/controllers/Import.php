@@ -22,66 +22,86 @@ class Import extends CI_Controller {
 	public function uploadplayerscorefile()
 	{   $this->load->model('host');  					// host env?
 		$this->load->view('navigation.php', $this);	 	// Navigation for page
-		var_dump($_FILES);
+		//var_dump($_FILES);
 		
-			$target_dir = "uploads/";
-			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-			$uploadOk = 1;
-			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			// Check if image file is a actual image or fake image
-			if(isset($_POST["submit"])) {
-			    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-			    if($check !== false) {
-			        echo "File is an image - " . $check["mime"] . ".";
-			        $uploadOk = 1;
-			    } else {
-			        echo "File is not an image.";
-			        $uploadOk = 0;
-			    }
-			}
-			// Check if file already exists
-			if (file_exists($target_file)) {
-			    echo "Sorry, file already exists.";
-			    $uploadOk = 0;
-			}
-			// Check file size
-			if ($_FILES["fileToUpload"]["size"] > 500000) {
-			    echo "Sorry, your file is too large.";
-			    $uploadOk = 0;
-			}
-			// Allow certain file formats
-						/*
-			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-						&& $imageFileType != "gif" ) {
-						    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-						    $uploadOk = 0;
-						}
-			*/
-			// Check if $uploadOk is set to 0 by an error
-			var_dump($_FILES["fileToUpload"]["tmp_name"]);
+		//validate file	 
+		$fileuploadvalidation = $this->uploadplayerformfilevalidation($_FILES);
+		//if ($fileuploadvalidation == " ")
+		print_r($fileuploadvalidation);
+		
+	
 			
-			if ($uploadOk == 0) {
-			    echo "Sorry, your file was not uploaded.";
-			// if everything is ok, try to upload file
-			} else {
-			    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-			        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-			    } else {
-			        echo "Sorry, there was an error uploading your file.";
-			    }
-			}
-			
-			
-			
-			
-			
-
 		//$this->uploadplayerformfileuploaded($_FILES);	 // page body
-		$this->load->view('getrankingview.php', $this);	
+		$this->load->view('getrankingview.php' );	
 	}
 	 
 	 
-	 
+	
+	//Process form data submitted for  upload  
+	public function uploadplayerformfilevalidation()
+	{   
+		$target_dir = "uploads/";
+		$target_file = $target_dir . basename($_FILES["uploadFile"]["name"]);
+		$uploadOk = 1;
+		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+		// Check if file already exists
+
+
+		if (file_exists($target_file)) {
+		    return "The file already exists.";
+		    $uploadOk = 0;
+		}
+		// Check file size
+		if ($_FILES["uploadFile"]["size"] > 500000) {
+		    return "Sorry, your file is too large.";
+		    $uploadOk = 0;
+		}
+		 
+		
+		//set message for uploaded or not uploaded
+		if ($uploadOk == 0) {
+		    return "The file was not uploaded.";
+		// if everything is ok, try to upload file
+		} else {
+		    if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_file)) {
+		        
+		     
+				$file = file_get_contents( $target_file, true);
+				
+				    	 
+		        $file = ltrim($file, "Person,Score,Person,Score");
+		        $file = trim($file);	
+		        $file   = preg_split('/\s+/', $file);
+
+		        
+		        //var_dump($data);	
+		        	
+				//$file = explode($file);
+			 
+				//$file2 =  explode(" ", $data);
+			 
+
+				
+				 
+
+				//$tmp = json_decode(",", $tmp, true);
+			 
+			 
+				
+				
+				var_dump($file);
+		
+		
+		        return "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
+		        
+		        
+		    } else {
+		        return "Sorry, there was an error uploading your file.";
+		    }
+		}
+	}
+
+ 
 	//Process form data submitted for  upload  
 	public function uploadplayerformfileuploaded()
 	{   $this->load->model('host'); // host env?
