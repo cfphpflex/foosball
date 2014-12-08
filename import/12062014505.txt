@@ -1,0 +1,15 @@
+Person,Score,Person,Score
+Alex,44,Barrett,55
+Alex,1,Barrett,5
+Alex,2,Barrett,5
+Alex,0,Barrett,5
+Alex,6,Barrett,5
+Alex,5,Barrett,2
+Alex,43,Barrett,0
+Joel,4,Barrett,5
+Tim,4,Alex,5
+Tim,52,Alex,2
+Alex,3,Tim,200
+Alex,225,Tim,32
+Alex,5,Joel,4
+Joel,55,Tim,21

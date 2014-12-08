@@ -16,7 +16,7 @@
 							url		:		'http://localhost/foosball/index.php/Ranking/getrankingdata', //CFC that will return the users
 	        				datatype:   	'json', //We specify that the datatype we will be using will be JSON
 	        				// STEP 1   must match the the number of col items
-	        		   		colNames:   	[  'ID','Player', 'Highest Score' , 'Total Games'    ], //Column Names
+	        		   		colNames:   	[  'ID','Player', 'Highest Score'   ], //Column Names
 							//The Column Model to define the data. Note you can make columns non sortable, specify width, alignment, etc.
 	        				// Requirement: must match colNames and  sql query fields
 	        				
@@ -26,11 +26,12 @@
 	             			{name:'ranking_ID',index:'ranking_ID',   sorttype:"int",editable:false  },
 						    
 						    {name:'player',index:'player',   sorttype:"text",
-                                    						editable:true,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}},
+                                    						editable:false,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}},
                             {name:'playerScore',index:'playerScore',   sorttype:"text",
-                                    						editable:true,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}},
-                            {name:'playerTotalGames',index:'playerTotalGames',   sorttype:"text",
-                                    						editable:true,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}} 
+                                    						editable:false,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}}
+                                    						//,
+                          //  {name:'playerTotalGames',index:'playerTotalGames',   sorttype:"text",
+                                    						//editable:false,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}} 
                              ],
                              
                              	
@@ -65,12 +66,7 @@
 						//SUBGRID
 						subGrid: true,
 					    subGridRowExpanded: function(subgrid_id, player) {
-						    // we pass two parameters
-						    // subgrid_id is a id of the div tag created within a table
-						    // the row_id is the id of the row
-						    // If we want to pass additional parameters to the url we can use
-						    // the method getRowData(row_id) - which returns associative array in type name-value
-						    // here we can easy construct the following
+						   
 					       var subgrid_table_id;
 					       subgrid_table_id = subgrid_id+"_t";
 					       jQuery("#"+subgrid_id).html("<table id='"+subgrid_table_id+"' class='scroll'></table>");
@@ -80,12 +76,17 @@
 					          colNames: [ 	'id','player1','score', 'player2', 'score'],
 					          colModel: [
 					            
-					            {name:	"subgrid_id",  		index:"subgrid_id",width:30},
+					            {name:	"import_ID",  		index:"subgrid_id",width:30},
 					            {name:'player1',index:'player1',   width:120, sorttype:"text", editable:true,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}}, 
-					            {name:	"player1score",  	index:"player1score",width:30},
-					            
+					           
+					            {name:'player1score',index:'player1score',   sorttype:"text",
+                                    						editable:true,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}},
+                           
 					            {name:'player2',index:'player2',   width:120, sorttype:"text", editable:true,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}}, 
-					            {name:	"player2score",  	index:"player2score",width:30} 
+					           
+					           {name:'player2score',index:'player2score',   sorttype:"text",
+                                    						editable:true,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}}
+                           
  
 					          ],
 					          height: '100%',

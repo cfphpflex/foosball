@@ -37,16 +37,15 @@ class Import extends CI_Controller {
 	 
 	 
 	
-	//Process form data submitted for  upload  
+	//Validate and Process form data submitted for  upload  
 	public function uploadplayerformfilevalidation()
 	{   
+		// default params 
 		$target_dir = "uploads/";
 		$target_file = $target_dir . basename($_FILES["uploadFile"]["name"]);
 		$uploadOk = 1;
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		// Check if file already exists
-
-
 		if (file_exists($target_file)) {
 		    return "The file already exists.";
 		    $uploadOk = 0;
@@ -65,34 +64,20 @@ class Import extends CI_Controller {
 		} else {
 		    if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_file)) {
 		        
-		     
+		     	//get file contents
 				$file = file_get_contents( $target_file, true);
-				
-				    	 
+				//trim headings   	 
 		        $file = ltrim($file, "Person,Score,Person,Score");
+		        //trim spaces
 		        $file = trim($file);	
-		        $file   = preg_split('/\s+/', $file);
-
-		        
-		        //var_dump($data);	
-		        	
-				//$file = explode($file);
-			 
-				//$file2 =  explode(" ", $data);
-			 
-
-				
-				 
-
-				//$tmp = json_decode(",", $tmp, true);
-			 
-			 
-				
-				
-				var_dump($file);
-		
-		
-		        return "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
+		        //split to array of strings
+		        $fileArray   = preg_split('/\s+/', $file);
+		      	//insert records
+		      	  
+			  	$insertrecords = $this->uploadplayerformfiledatatodb($fileArray); 
+			  	
+			  	
+		       // return "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
 		        
 		        
 		    } else {
@@ -102,6 +87,110 @@ class Import extends CI_Controller {
 	}
 
  
+ 
+ 
+	//insert into db  form data submitted for  upload  
+	public function uploadplayerformfiledatatodb($fileArray)
+	{    
+		// inserts but needs more work to track if inserting or not and how many
+		
+		//get db connection
+		$this->load->model( 'sqlmodel' );  
+		//set db connection from controller
+		$db 	= $this->sqlmodel->dbconnection();  		//GET DB Connection
+		 
+		// set sql statement; prevent sql injection using prepare
+		$sql = $db->prepare(  " INSERT INTO import  
+				( player1, player1Score, player2, player2Score   )  
+				values (  ?, ?, ?, ? )  ");   // 1. SQL stmnt 
+		 
+		for ($i=0; $i<sizeof($fileArray); $i++) {
+			//explode string to array
+		    $newRecord = explode( ",", $fileArray[$i]);
+		    // test for 4  elements
+		    if (  sizeof($newRecord == 4) ) {
+			    //insert  
+				$sql->execute(  array(   $newRecord[0] ,   $newRecord[1] ,   $newRecord[2],  $newRecord[3]   )  );  
+			}
+			else {  //set counter  0  to report not inserted  
+			}  
+		  	
+		} //END for
+
+		$this->updaterankings();
+  
+	}//end fn
+	
+	
+	
+	
+	
+	
+	//insert into db  form data submitted for  upload  
+	public function updaterankings()
+	{    
+	
+		//delete all ranking and recal
+		$this-> deleteallranking();
+	
+		//get db connection
+		$this->load->model( 'sqlmodel' );    
+		$db 	= $this->sqlmodel->dbconnection();  		//GET DB Connection
+	    $sql = $db->prepare(" select distinct(player1) from import union  select distinct(player2) from import  ");  /* 	 //{$sidx}   {$sord} */
+		$sql->execute();
+		$getUniquePlayerRecords = $sql->fetchAll();
+	 	 
+		 
+		foreach( $getUniquePlayerRecords as $player => $value ) {
+		
+		
+		//var_dump( $value); echo ("<br>");
+		
+			 
+$sql = $db->prepare(" select max(player1score) as score  from import where player1 = '{$value[0]}'    union  select    
+			         max(player2score) as score
+									 from import   where player2 = '{$value[0]}' order by score DESC  limit 1");  
+									 
+			$sql->execute();
+			$getMaxScore = $sql->fetchAll();	
+			
+			var_dump($getMaxScore [0] ["score"]);  echo ("<br>");
+			 
+		  
+				 
+				// set sql statement; prevent sql injection using prepare
+				$sql = $db->prepare(  " INSERT INTO ranking  
+						( player, playerScore, playerTotalGames   )  
+						values (  ?, ?, ?  )  ");   // 1. SQL stmnt 
+				 
+			    //insert  
+				$sql->execute(  array(   $value[0] ,   $getMaxScore [0] ["score"] , 5  )  );  
+		 
+		}//end foreach
+		 
+	 
+	} //end funcion
+	
+	
+	
+	
+	//delete AlL rankings 
+	public function deleteallranking()
+	{ 
+		$this->load->model( 'sqlmodel' );    
+		$db 	= $this->sqlmodel->dbconnection();  		//GET DB Connection
+	    $sql = $db->prepare(" delete from ranking ");  /* 	 //{$sidx}   {$sord} */
+		$sql->execute();
+	}	 
+	 	 
+	 	 
+	 	 
+	 	 
+	 	 
+	 	 
+	 	 
+
+
 	//Process form data submitted for  upload  
 	public function uploadplayerformfileuploaded()
 	{   $this->load->model('host'); // host env?
