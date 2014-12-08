@@ -154,7 +154,7 @@ $sql = $db->prepare(" select max(player1score) as score  from import where playe
 			$sql->execute();
 			$getMaxScore = $sql->fetchAll();	
 			
-			var_dump($getMaxScore [0] ["score"]);  echo ("<br>");
+			//var_dump($getMaxScore [0] ["score"]);  echo ("<br>");
 			 
 		  
 				 
