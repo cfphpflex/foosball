@@ -146,26 +146,29 @@ class Import extends CI_Controller {
 		
 		//var_dump( $value); echo ("<br>");
 		
-			 
-$sql = $db->prepare(" select max(player1score) as score  from import where player1 = '{$value[0]}'    union  select    
-			         max(player2score) as score
-									 from import   where player2 = '{$value[0]}' order by score DESC  limit 1");  
-									 
+			//GET Player's top score 
+			$sql = $db->prepare(" select max(player1score) as score  from import where player1 = '{$value[0]}'    union  select    
+			         max(player2score) as score from import   where player2 = '{$value[0]}' order by score DESC  limit 1");  
 			$sql->execute();
 			$getMaxScore = $sql->fetchAll();	
-			
-			//var_dump($getMaxScore [0] ["score"]);  echo ("<br>");
-			 
-		  
-				 
-				// set sql statement; prevent sql injection using prepare
-				$sql = $db->prepare(  " INSERT INTO ranking  
-						( player, playerScore, playerTotalGames   )  
-						values (  ?, ?, ?  )  ");   // 1. SQL stmnt 
-				 
-			    //insert  
-				$sql->execute(  array(   $value[0] ,   $getMaxScore [0] ["score"] , 5  )  );  
 		 
+		  	//GET Player's most games   
+			$sql = $db->prepare(" select count(*) as totalgames  from import where player1 = '{$value[0]}'   
+			 union  select count(*) as totalgames from import   where player2 = '{$value[0]}' order by totalgames DESC  ");  
+			$sql->execute();
+			$getTotalGames = $sql->fetchAll();	
+			//var_dump($getTotalGames);
+			//Sum total games
+			$countTotalGame = 0;
+			foreach ($getTotalGames as $key => $totalGames ) {
+			    $countTotalGame = $countTotalGame + (integer)$totalGames[0];
+			} 
+		   
+		   // set sql statement; prevent sql injection using prepare
+			$sql = $db->prepare(  " INSERT INTO ranking  
+					( player, playerScore, playerTotalGames   )  values (  ?, ?, ?  )  ");   // 1. SQL stmnt  
+			$sql->execute(  array(   $value[0] ,   $getMaxScore [0] ["score"] , $countTotalGame  )  );  
+			$countTotalGame = 0;
 		}//end foreach
 		 
 	 

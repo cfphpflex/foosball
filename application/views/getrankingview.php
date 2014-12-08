@@ -1,4 +1,4 @@
-  <?php   echo "<br>";      ?>	
+  <?php         ?>	
 
 <div id="page">	
  
@@ -15,36 +15,36 @@
 		             	{  
 							url		:		'http://localhost/foosball/index.php/Ranking/getrankingdata', //CFC that will return the users
 	        				datatype:   	'json', //We specify that the datatype we will be using will be JSON
-	        				// STEP 1   must match the the number of col items
-	        		   		colNames:   	[  'ID','Player', 'Highest Score'   ], //Column Names
+	        				// STEP 1   must match the the number of col items 
+	        		   		colNames:   	[   'ID','Player', 'Highest Score', 'Total Games'   ], //Column Names
 							//The Column Model to define the data. Note you can make columns non sortable, specify width, alignment, etc.
 	        				// Requirement: must match colNames and  sql query fields
 	        				
 	                       // STEP 2> match column headings
 		             		colModel: [  
 
-	             			{name:'ranking_ID',index:'ranking_ID',   sorttype:"int",editable:false  },
+	             			{name:'ranking_ID',index:'ranking_ID'  ,sorttype:"int",editable:false  },
 						    
-						    {name:'player',index:'player',   sorttype:"text",
+						    {name:'player',index:'player',   sorttype:"text",    
                                     						editable:false,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}},
                             {name:'playerScore',index:'playerScore',   sorttype:"text",
-                                    						editable:false,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}}
-                                    						//,
-                          //  {name:'playerTotalGames',index:'playerTotalGames',   sorttype:"text",
-                                    						//editable:false,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}} 
+                                    						editable:false,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}},
+                                    						 
+                            {name:'playerTotalGames',index:'playerTotalGames',   sorttype:"text",
+                                    						editable:false,edittype:"text",editoptions:{},editrules:{required:true},formoptions:{elmprefix:"(*)"}} 
                              ],
                              
                              	
 						    viewrecords: 	true,
                             gridview: 		true,
                             pager:      	$('#pager'), //The div we have specified, tells jqGrid where to put the pager
-            				rowNum:     	25, //Number of records we want to show per page
-            				rowifwefoosballRanking:[20,30,40,50], //Row ifwefoosballRanking, to allow user to select how many rows they want to see per page  no values = disabled
-            				sortorder:  	"asc",  //'desc',      //Default sort order
-            				sortname:   	"ranking_ID", //Default sort column
+            				rowNum:     	3, //Number of records we want to show per page
+            				rowifwefoosballRanking:[3,30,40,50], //Row ifwefoosballRanking, to allow user to select how many rows they want to see per page  no values = disabled
+            				sortorder:  	"DESC",  //'desc',      //Default sort order
+            				sortname:   	"playerScore", //Default sort column
             				viewrecords: 	true, //Shows the nice message on the pager
             				imgpath:        'ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/', //Image path for prev/next etc images
-            				caption:        'Foosball Ranking', //Grid Name
+            				caption:        'FoosBALLER Ranking', //Grid Name
             				recordtext:     "Record {0} - {1} of {2}",//Pager information to show
             				rownumbers:      false,//Show row numbers
             				
@@ -109,10 +109,10 @@
         			
         				recordtext:     "Record {0} - {1} of {2}",//Pager information to show
         				rownumbers:      false,//Show row numbers
-        				rownumWidth:     "40",//Width of the row numbers column
+        				rownumWidth:     "1",//Width of the row numbers column
         				sortable:        true,
         		       	height:          'auto',
-                        width:           'auto', //I like auto no blank space between. Using a fixed height can mean either a scrollbar or a blank space before the pager
+                        width:           '720', //I like auto no blank space between. Using a fixed height can mean either a scrollbar or a blank space before the pager
         				mtype:           'POST',
 	            			
 	            				

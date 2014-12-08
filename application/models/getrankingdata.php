@@ -23,7 +23,7 @@
 	 		// ENV
  			$this ->environment 	= isset($_SERVER['HTTP_HOST'])?$_SERVER['HTTP_HOST']:'localhost';   //Page user is on
 			
-			//var_dump($this->'server';
+			  
 			 
 	 		// DECLARE 	MYSQL HOST INFO
 		    $this ->hostIP = "127.0.0.1";	// API
@@ -32,17 +32,13 @@
 		 	//DECLARE Default Params
 		 	
 		 	 
-		 		/*	foreach ( $_POST as $var => $val)
-		 			{
-		 				$this -> $var 			= isset($_POST['$var'])?$_POST['$val']:"";   	 //Page user is on
-		 			}
-		 	   */
+		 	 
 		 	
-		 	// DECLARE SEARCH PARAM DEFAULTS
+		 	// DECLARE SEARCH PARAM DEFAULTS   DESC
 		 	$this -> page 			= isset($_POST['page'])?$_POST['page']:1;   	 //Page user is on
 		 	$this -> rows 			= isset($_POST['rows'])?$_POST['rows']:10;  	//Number of Rows to display per page
-		 	$this -> sidx 			= isset($_POST['sidx'])?$_POST['sidx']:"";  	//Sort Column
-		 	$this -> sord 			= isset($_POST['sord'])?$_POST['sord']:"ASC";  //Sort Order
+		 	$this -> sidx 			= isset($_POST['sidx'])?$_POST['sidx']:"playerScore";  	//Sort Column
+		 	$this -> sord 			= isset($_POST['sord'])?$_POST['sord']:"DESC";  //Sort Order
 		 	$this -> nd 			= isset($_POST['nd'])?$_POST['nd']:0;    
 		 	$this -> _search 		= isset($_POST['_search'])?$_POST['_search']:false;  		//Whether search is performed by user on data grid
 		 	$this -> searchField 	= isset($_POST['searchField'])?$_POST['searchField']:"";  	//Field to perform Search on
@@ -99,11 +95,10 @@
  
  
 				 $sql = $this->_db->prepare("  
-									 select ranking_ID  , player,   playerScore , 
-									 playerTotalGames   from ranking
+									 select ranking_ID  , player,   playerScore , playerTotalGames,  playerHighestScore   from ranking
 									 group by player
-									 order by   playerScore ASC
-						");  /* 	 //{$sidx}   {$sord} */
+									 order by   {$sidx}   {$sord}  
+						");  /*  playerScore DESC	 // */
 						
 						
 				// 2. Execute		
@@ -137,13 +132,13 @@
 					 
 
 							/*
-	$this->output
-								 ->set_content_type('application/json')
-						         ->set_output(json_encode($foo));
- 
-						          
- 	
-*/
+						$this->output
+													 ->set_content_type('application/json')
+											         ->set_output(json_encode($foo));
+					 
+											          
+					 	
+					*/
 		          }
 		        else { echo " no records ";   }
 							        

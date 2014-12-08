@@ -4,10 +4,7 @@
 		// helps 
 		$ci=& get_instance();
  		$ci->load->model("host");  			//Load host environment
-  
-        //JIRA Credentials from controller Jira 
-        // $credentials  	= $this->JiraCredentialsModel->JiraCredentials();
-       	$myHost  = $this->host->myHost();
+     	$myHost  = $this->host->myHost();
   
 ?>
 
@@ -55,37 +52,26 @@
 	<div id="topnav"  style="align:left;">
 		 
 		<div id="topnav-container"   style="align:left;" >
-			 
-			
+			  
 			<div id="menu"   style="align:left;"  >
-				
-				
+				 
 				<ul id="header-nav"  style="align:left;">
 				 	<li class=" ">
- 						&nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;   &nbsp;  &nbsp; &nbsp; if(we) Foosball  &nbsp;  &nbsp; &nbsp; 
+ 						&nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;   &nbsp;  &nbsp; &nbsp; if(we) Foosball; we all WIN! &nbsp;  &nbsp; &nbsp; 
  						  	 
-						    <!--  <a href="##"><img src="http://localhost/foosball/application/views/logo.png"  width="70px"  alt="" title=""  class="logout" />  &nbsp;&nbsp;&nbsp;&nbsp;   </a> -->
+ 						<!--  <a href="##"><img src="http://localhost/foosball/application/views/logo.png"  width="70px"  alt="" title=""  class="logout" />  &nbsp;&nbsp;&nbsp;&nbsp;   </a> -->
 							 
 					 
 					</li>
  
-					<li class=" "><a href="<?php echo $myHost['localhost'] ; ?>/foosball/index.php/Ranking/index"  class="logout" ><span>HOME</span></a>
-					 			
+						<li class=" "><a href="<?php echo $myHost['localhost'] ; ?>/foosball/index.php/Ranking/index"  class="logout" ><span>HOME</span></a></li>
+						<li  class=" " ><a  href="<?php echo $myHost['localhost'] ; ?>/foosball/index.php/Import/index"  class="logout" ><span>Import</span></a> </li>
+						<li class=" "><a  href="<?php echo $myHost['localhost'] ; ?>/foosball/index.php/Ranking/index"  class="logout" ><span>Rankings</span></a>
+						 				
 					</li>
-					<li  class=" " ><a  href="<?php echo $myHost['localhost'] ; ?>/foosball/index.php/Import/index"  class="logout" ><span>Import</span></a> 
-					</li>
-					 
-					<li class=" "><a  href="<?php echo $myHost['localhost'] ; ?>/foosball/index.php/Ranking/index"  class="logout" ><span>Rankings</span></a>
-					 				
-					</li>
-					
-				  				
-						 				  
+					 	 				  
 					<!-- <li class="logout">    <a href="<?php echo $myHost['localhost'] ; ?>/foosball/index.php/Logout/index"   class="logout" >Logout</a> </li> -->
-					
-
-					
-   
+					 
 				</ul>
 				 
 			  
