@@ -1,0 +1,32 @@
+CREATE TABLE ifwefoosball.import (
+	import_ID int(10) NOT NULL auto_increment,
+	player1 varchar(100),
+	player1Score int(10),
+	player2 varchar(100),
+	player2Score int(10),
+	ImportDate datetime,
+	PRIMARY KEY (import_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE ifwefoosball.ranking (
+	ranking_ID int(10) NOT NULL auto_increment,
+	player varchar(100),
+	playerScore int(10),
+	playerTotalGames int(10),
+	playerHighestScore int(10),
+	PRIMARY KEY (ranking_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (1, 'Alex', 4, 'Barrett', 5, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (2, 'Alex', 1, 'Barrett', 5, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (3, 'Alex', 2, 'Barrett', 5, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (4, 'Alex', 0, 'Barrett', 5, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (5, 'Alex', 6, 'Barrett', 5, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (6, 'Alex', 5, 'Barrett', 2, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (7, 'Alex', 4, 'Barrett', 5, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (8, 'Tim', 4, 'Alex', 5, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (9, 'Tim', 5, 'Alex', 2, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (10, 'Alex', 3, 'Tim', 5, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (11, 'Alex', 5, 'Tim', 3, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (12, 'Alex', 5, 'Joel', 4, null);
+INSERT INTO ifwefoosball.import(import_ID, player1, player1Score, player2, player2Score, ImportDate) VALUES (13, 'Joel', 5, 'Tim', 2, null);
+INSERT INTO ifwefoosball.ranking(ranking_ID, player, playerScore, playerTotalGames, playerHighestScore) VALUES (1, 'Alex', 5, 6, 9);
+INSERT INTO ifwefoosball.ranking(ranking_ID, player, playerScore, playerTotalGames, playerHighestScore) VALUES (2, 'Barrett', 4, 5, 8);
